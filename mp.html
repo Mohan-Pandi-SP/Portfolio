@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohan Pandi | CV</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --main-bg: #181c24;
+            --accent: #232946;
+            --accent-light: #3e497a;
+            --accent-gradient: linear-gradient(90deg, #232946 0%, #3e497a 100%);
+            --white: #fff;
+            --shadow: 0 8px 32px 0 rgba(35,41,70,0.25), 0 1.5px 3px rgba(0,0,0,0.07);
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: url('https://www.farukdesign.com/wp-content/uploads/2021/05/Resume-Mitchell-5.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #f3f6fa;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            z-index: -1;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(24,28,36,0.92);
+            pointer-events: none;
+        }
+        .hero {
+            background: var(--accent-gradient);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0 40px 0;
+            box-shadow: var(--shadow);
+            border-radius: 0 0 36px 36px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 1.2s;
+        }
+        .hero .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 4px 16px rgba(35,41,70,0.18);
+            margin-bottom: 18px;
+            background: #fff;
+            animation: avatarPop 1.2s, zoomInOut 3s infinite alternate;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 2.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.18), 0 1px 0 #fff;
+            animation: slideInLeft 1.2s;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin: 10px 0 0 0;
+            font-weight: 400;
+            letter-spacing: 1px;
+            animation: fadeIn 2s;
+            color: #e0e7ff;
+        }
+        .hero .contact {
+            margin: 18px 0 0 0;
+            font-size: 1.05rem;
+            color: #c7d0e6;
+            animation: fadeIn 2.2s;
+        }
+        .hero .cta-btn {
+            margin-top: 28px;
+            background: #232946;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(62,73,122,0.12);
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+            animation: popIn 1.3s;
+        }
+        .hero .cta-btn:hover {
+            background: #fff;
+            color: #232946;
+            transform: scale(1.06);
+        }
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 16px 0 16px;
+        }
+        .section-card {
+            background: rgba(35,41,70,0.92);
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(35,41,70,0.18), 0 1.5px 3px rgba(0,0,0,0.07);
+            margin-bottom: 32px;
+            padding: 32px 36px;
+            animation: fadeInUp 1.2s;
+            transition: box-shadow 0.3s, transform 0.4s cubic-bezier(.25,.8,.25,1);
+            perspective: 900px;
+            position: relative;
+            color: #f3f6fa;
+        }
+        .section-card:hover {
+            box-shadow: 0 16px 48px rgba(62,73,122,0.28), 0 2px 8px rgba(0,0,0,0.10);
+            transform: rotateY(6deg) scale(1.03);
+        }
+        .section-card h2 {
+            color: #a5b4fc;
+            margin-top: 0;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 2px 6px rgba(99,102,241,0.15);
+            margin-bottom: 18px;
+        }
+        .section-card h3 {
+            color: #e0e7ff;
+            margin-bottom: 6px;
+            font-size: 1.15rem;
+        }
+        .section-card ul {
+            padding-left: 18px;
+        }
+        footer {
+            background: #232946;
+            color: #fff;
+            text-align: center;
+            padding: 32px 0 18px 0;
+            margin-top: 40px;
+            border-radius: 18px 18px 0 0;
+            animation: fadeInUp 1.5s, zoomInOut 3s infinite alternate;
+            box-shadow: 0 -4px 24px rgba(35,41,70,0.22);
+            position: relative;
+            z-index: 2;
+        }
+        .footer-social {
+            margin: 18px 0 8px 0;
+        }
+        .footer-social a {
+            color: #fff;
+            margin: 0 12px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .footer-social a:hover {
+            color: #a5b4fc;
+            transform: scale(1.1) rotate(-7deg);
+            text-decoration: underline;
+        }
+        .footer-social i {
+            margin-right: 6px;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeIn {
+            from { opacity: 0;}
+            to { opacity: 1;}
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px);}
+            to { opacity: 1; transform: translateX(0);}
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0;}
+            80% { transform: scale(1.08);}
+            100% { transform: scale(1); opacity: 1;}
+        }
+        @keyframes avatarPop {
+            0% { transform: scale(0.5) rotate(-20deg); opacity: 0;}
+            80% { transform: scale(1.1) rotate(8deg);}
+            100% { transform: scale(1) rotate(0); opacity: 1;}
+        }
+        @keyframes zoomInOut {
+            0% { transform: scale(1);}
+            50% { transform: scale(1.07);}
+            100% { transform: scale(1);}
+        }
+        @media (max-width: 800px) {
+            .main-content {
+                padding: 24px 2vw 0 2vw;
+            }
+            .section-card {
+                padding: 18px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img class="avatar" src="c:\Users\Mohan.pck\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\EC8CE6ABB3E952A85B8551BA726A1227\WhatsApp Image 2025-10-03 at 23.09.00_8cfc5fb7.jpg" alt="Professional Avatar">
+        <h1>MohanPandi.SP</h1>
+        <div class="subtitle">Web Developer | ECE Student | Tech Enthusiast</div>
+        <div class="contact">
+            <span><i class="fa fa-envelope"></i> mohanpandisp04@gmail.com</span> &nbsp;|&nbsp;
+            <span><i class="fa fa-phone"></i> +91 9345777026</span> &nbsp;|&nbsp;
+            <span><i class="fa fa-location-dot"></i> Bodinayakanur</span>
+        </div>
+        <button class="cta-btn" onclick="window.scrollTo({top: document.querySelector('.main-content').offsetTop, behavior: 'smooth'});">
+            Explore My CV <i class="fa fa-arrow-down"></i>
+        </button>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="section-card" id="about">
+            <h2>About Me</h2>
+            <p>
+                I have a strong background in web development, having worked as a front-end developer for several months. My skills include HTML, CSS, and JavaScript. I am also familiar with popular frameworks such as Bootstrap.
+            </p>
+        </div>
+        <div class="section-card" id="education">
+            <h2>Education</h2>
+            <h3>Schooling</h3>
+            <p>I completed my HSC & SSLC at Scism Matric Higher Secondary School. HSC in 2022 & SSLC in 2020.</p>
+            <h3>Graduation</h3>
+            <p>Currently pursuing a Bachelor's Degree in Electronics & Communication Engineering at Dhanlakshmi Srinivasan Engineering College (Autonomous).</p>
+        </div>
+        <div class="section-card" id="projects">
+            <h2>Projects</h2>
+            <h3>Smart Parking System</h3>
+            <p>
+                My first project, completed with a team of 4. It explains a car parking system that displays available slots and prevents entry when full, showing real-time status on an LCD display.
+            </p>
+        </div>
+        <div class="section-card" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Team Building</li>
+                <li>Active Listening</li>
+                <li>Verbal Communication</li>
+                <li>Cultural Awareness</li>
+                <li>Calm under Pressure</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer with Social Links -->
+    <footer>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/share/1FQMeGNu4f/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://x.com/Sp2Mohan?t=Uq5lu8mtEuk-Tpf6sMgiOQ&s=09" target="_blank" rel="noopener" title="Twitter/X"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://www.linkedin.com/in/sp-mohanpandi-91b64a331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/Mohan-Pandi-SP" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.instagram.com/mohan.pckr?igsh=MWoyNXl6MXIwd2xydw==" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+        <div style="margin-top:10px;">
+            <a href="mailto:mohanpandisp04@gmail.com" style="color:#fff;text-decoration:underline;"><i class="fa fa-envelope"></i> Email Me</a>
+        </div>
+        <p style="margin-top:18px;">&copy; 2025 MohanPandi.SP. All rights reserved.</p>
+    </footer>
+</body>
+</html>
